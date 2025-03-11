@@ -2,6 +2,7 @@ package tn.esprit.tic.springproj.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Commande {
@@ -13,5 +14,13 @@ public class Commande {
     private Float totalRemise;
     private Float totalCommande;
     private Long note;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
+
+    @ManyToOne
+    @JoinColumn(name = "menu_id")
+    private Menu menu;
 
 }

@@ -13,4 +13,6 @@ public class ChainRestaurant {
     private String libelle;
     private LocalDate dateCreation;
 
+    @OneToMany(mappedBy = "chainRestaurant")
+    private List<Restaurant> restaurants;
 }

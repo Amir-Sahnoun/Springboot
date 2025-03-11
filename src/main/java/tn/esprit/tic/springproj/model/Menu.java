@@ -14,7 +14,23 @@ public class Menu {
     private TypeMenu typeMenu;
     private Float prixTotal;
 
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id")
+    private Restaurant restaurant;
 
+    @OneToMany(mappedBy = "menu")
+    private List<Composant> composants;
+
+    @OneToMany(mappedBy = "menu")
+    private List<Commande> commandes;
+
+    @ManyToMany
+    @JoinTable(
+            name = "menu_chefCuisinier",
+            joinColumns = @JoinColumn(name = "menu_id"),
+            inverseJoinColumns = @JoinColumn(name = "chefCuisinier_id")
+    )
+    private List<ChefCuisinier> chefCuisiniers;
 
     // Getters and Setters
 }

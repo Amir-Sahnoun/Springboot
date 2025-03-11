@@ -11,4 +11,11 @@ public class Composant {
     private String nomComposant;
     private Float prix;
 
+    @ManyToOne
+    @JoinColumn(name = "menu_id")
+    private Menu menu;
+
+    @OneToOne(mappedBy = "composant")
+    private DetailComposant detailComposant;
+
 }

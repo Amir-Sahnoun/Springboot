@@ -18,4 +18,6 @@ public class DetailComposant {
     @JoinColumn(name = "composant_id")
     private Composant composant;
 
+    public void setIdDetailComposant(Long id) {
+    }
 }

@@ -2,7 +2,6 @@ package tn.esprit.tic.springproj.model;
 
 import jakarta.persistence.*;
 
-import java.util.List;
 
 @Entity
 public class DetailComposant {
@@ -19,5 +18,6 @@ public class DetailComposant {
     private Composant composant;
 
     public void setIdDetailComposant(Long id) {
+
     }
 }

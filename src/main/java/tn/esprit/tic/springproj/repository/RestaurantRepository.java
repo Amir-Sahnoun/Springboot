@@ -15,5 +15,7 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
      // 1.5 Liste des restaurants ayant une capacit� sup�rieur � 100 (param�tre) et dont la chaine de restauration a �t� cr��e avant 2020 (param�tre)
     @Query("SELECT r FROM Restaurant r WHERE r.nbPlacesMax > :capacite AND r.chainRestaurant.dateCreation < :date")
     List<Restaurant> findRestaurantsByCapaciteAndChaineRestaurationDate(@Param("capacite") Long capacite, @Param("date") Date date);
+    
+    Restaurant findByNom(String nom);
 
 }

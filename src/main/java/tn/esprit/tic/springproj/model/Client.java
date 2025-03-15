@@ -1,9 +1,14 @@
 package tn.esprit.tic.springproj.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 import java.util.List;
 
+@Setter
+@Getter
 @Entity
 public class Client {
     @Id
@@ -15,35 +20,4 @@ public class Client {
     @OneToMany(mappedBy = "client")
     private List<Commande> commandes;
 
-    public Long getIdClient() {
-        return idClient;
-    }
-
-    public void setIdClient(Long idClient) {
-        this.idClient = idClient;
-    }
-
-    public String getIdentifiant() {
-        return identifiant;
-    }
-
-    public void setIdentifiant(String identifiant) {
-        this.identifiant = identifiant;
-    }
-
-    public Date getDatePremiereVisite() {
-        return datePremiereVisite;
-    }
-
-    public void setDatePremiereVisite(Date datePremiereVisite) {
-        this.datePremiereVisite = datePremiereVisite;
-    }
-
-    public List<Commande> getCommandes() {
-        return commandes;
-    }
-
-    public void setCommandes(List<Commande> commandes) {
-        this.commandes = commandes;
-    }
 }

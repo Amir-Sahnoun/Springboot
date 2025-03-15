@@ -9,9 +9,9 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface CommandeRepository extends JpaRepository<Commande, Long> {
-    List<Commande> findByClientId(Long clientId);
-    List<Commande> findByClientIdAndDateCommandeBetween(Long clientId, LocalDate startDate, LocalDate endDate);
-    List<Commande> findByDateCommandeBetweenOrderByPrixAsc(LocalDate startDate, LocalDate endDate);
+    List<Commande> findByClientIdClient(Long clientId);
+    List<Commande> findByClientIdClientAndDateCommandeBetween(Long clientId, LocalDate startDate, LocalDate endDate);
+    List<Commande> findByDateCommandeBetweenOrderByTotalCommandeAsc(LocalDate startDate, LocalDate endDate);
    
     // 1.1 Liste des commandes d'un client
     @Query("SELECT c FROM Commande c WHERE c.client.idClient = :clientId")

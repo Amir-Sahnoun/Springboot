@@ -33,7 +33,7 @@ public class ChainRestaurantServiceImpl implements CrudService<ChainRestaurant> 
     @Override
     public ChainRestaurant update(Long id, ChainRestaurant entity) {
         if (repository.existsById(id)) {
-            entity.setIdChainRestaurant(id); // Assuming ChainRestaurant has a setId method
+            entity.setIdChainRestaurant(id); 
             return repository.save(entity);
         }
         return null;

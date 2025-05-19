@@ -30,4 +30,5 @@ public interface MenuRepository extends JpaRepository<Menu, Long> {
     List<Menu> findMenusByTypeComposant(@Param("typeComposant") TypeComposant typeComposant);
 
     Menu findByLibelleMenu(String libelleMenu);
+
 }

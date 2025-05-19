@@ -3,6 +3,7 @@ package tn.esprit.tic.springproj.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.tic.springproj.model.ChefCuisinier;
+import tn.esprit.tic.springproj.model.TypeChef;
 import tn.esprit.tic.springproj.repository.ChefCuisinierRepository;
 import tn.esprit.tic.springproj.service.CrudService;
 
@@ -42,5 +43,9 @@ public class ChefCuisinierServiceImpl implements CrudService<ChefCuisinier> {
     @Override
     public void delete(Long id) {
         repository.deleteById(id);
+    }
+
+    public List<ChefCuisinier> listChefCuisinierByTypeChefAndRestaurant(TypeChef typeChef, String nomRestaurant) {
+        return repository.findByTypeChefAndRestaurant(typeChef, nomRestaurant);
     }
 }
